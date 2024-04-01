@@ -118,6 +118,7 @@ img, video {
   margin: auto;
   border-radius: 10px;
   overflow: hidden;
+  gap: 1.5rem;
 }
 .loginPage .container .videoDiv video, .loginPage .container .videoDiv .footerDiv, .registerPage .container .videoDiv video, .registerPage .container .videoDiv .footerDiv {
   position: absolute;

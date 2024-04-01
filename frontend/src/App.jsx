@@ -1,41 +1,34 @@
-import './App.css'
-import FirstPage from './Components/FirstPage/FirstPage'
-import HomePage from './Components/HomePage/HomePage'
-import Register from './Components/Register/Register'
-import Login from './Components/Login/Login'
-
-// Import React Router Dom
-import {
-  createBrowserRouter,
-  RouterProvider
-} from 'react-router-dom'
-
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <div><FirstPage/></div>
-  },
-  {
-    path: '/login',
-    element: <div><Login/></div>
-  },
-  {
-    path: '/register',
-    element: <div><Register/></div>
-  },
-  {
-    path: '/HomePage',
-    element: <div><HomePage/></div>
-  },
-])
+import Navbar from "./Components/Navbar/Navbar";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Shop from "./Pages/Shop";
+import Cart from "./Pages/Cart";
+import Product from "./Pages/Product";
+import Footer from "./Components/Footer/Footer";
+import ShopCategory from "./Pages/ShopCategory";
+import banner1 from "./Components/Assets/banner1.png";
+import banner2 from "./Components/Assets/banner2.png";
+import LoginSignup from "./Pages/LoginSignup";
 
 function App() {
 
   return (
     <div>
-      <RouterProvider router={router}/>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Shop gender="all" />} />
+          <Route path="/mechanical" element={<ShopCategory banner={banner1} category="mechanical" />} />
+          <Route path="/electrical" element={<ShopCategory banner={banner2} category="electrical" />} />
+          <Route path='/product' element={<Product />}>
+            <Route path=':productId' element={<Product />} />
+          </Route>
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/login" element={<LoginSignup/>} />
+        </Routes>
+        <Footer />
+      </Router>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
