@@ -12,14 +12,14 @@ import {
 
 
 const CartItems = () => {
-  const {products} = useContext(ShopContext);
-  const {cartItems,removeFromCart,getTotalCartAmount} = useContext(ShopContext);
+  const {products, cartItems, removeFromCart, getTotalCartAmount} = useContext(ShopContext);
+  const [orderId, setOrderId] = useState(null);
   
   // This value is from the props in the UI
-  const [open, setOpen] = useState(false);
   const style = {"layout":"vertical"};
+  const [open, setOpen] = useState(false);
 
-  function createOrder() {
+  const createOrder = (data, actions) => {
     // replace this url with your server
     return fetch("https://react-paypal-js-storybook.fly.dev/api/paypal/create-order", {
         method: "POST",
@@ -43,7 +43,8 @@ const CartItems = () => {
             return order.id;
         });
   }
-  function onApprove(data) {
+
+  const onApprove = async (data, actions) => {
     // replace this url with your server
     return fetch("https://react-paypal-js-storybook.fly.dev/api/paypal/capture-order", {
         method: "POST",
@@ -58,7 +59,7 @@ const CartItems = () => {
         .then((orderData) => {
             // Your code here after capture the order
         });
-}
+  }
 
   // Custom component to wrap the PayPalButtons and show loading spinner
   const ButtonWrapper = ({ showSpinner }) => {
@@ -131,9 +132,9 @@ const CartItems = () => {
           {open ? (
             <div>
               <button >CASH ON DELIVERY</button>
-            <PayPalScriptProvider options={{ clientId: "AVsI5c6RtKvoeuflJ3MyxJhcVETLB-rtZDVfWnzCevyr1rRC9nhsoef_ajmY6PqUueI9RkdFE7g06JuW", components: "buttons", currency: "USD" }}>
+              <PayPalScriptProvider options={{ clientId: "ATYYrTnup7h8DzjhrfJRTOey7k4Ei96VusfuRKxSDmCHxD2EUUTVRWOLnuXgFcVF9oyG3tyMtgXPAyV5", components: "buttons", currency: "USD" }}>
                 <ButtonWrapper showSpinner={false} />
-            </PayPalScriptProvider>
+              </PayPalScriptProvider>
             </div>
           ) : (
             <button onClick={() => setOpen(true)}>PROCEED TO CHECKOUT</button>
