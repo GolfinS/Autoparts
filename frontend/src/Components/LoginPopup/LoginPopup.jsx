@@ -1,13 +1,14 @@
 import React, { useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { StoreContext } from '../../Context/StoreContext';
 import { FaUserShield } from 'react-icons/fa';
 import { AiOutlineSwapRight } from 'react-icons/ai';
 import { BsFillShieldLockFill } from 'react-icons/bs';
+
 import video from '../../assets/video.mp4';
 import logo from '../../assets/logo.png';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 
 import './LoginPopup.css';
 import '../../App.css';

@@ -1,8 +1,9 @@
 import React, { useContext, useState } from 'react';
-import './Cart.css';
 import { StoreContext } from '../../Context/StoreContext';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+
+import './Cart.css';
 
 const Cart = () => {
   const { cartItems, parts_list, removeFromCart, getTotalCartAmount, url } = useContext(StoreContext);
@@ -22,6 +23,7 @@ const Cart = () => {
       setDiscountApplied(true);
       updatePromoCodeValidity(true);
       toast.success("Promo code applied successfully! You get a 99% discount.");
+      
     } else {
       setIsPromoCodeValid(false);
       setDiscountApplied(false);
@@ -33,6 +35,7 @@ const Cart = () => {
   const discountedTotal = () => {
     const totalAmount = getTotalCartAmount() + 5;
     if (discountApplied) {
+      toast.success("Promo code applied successfully! You get a 99% discount.");
       return totalAmount * 0.01;
     } else {
       return totalAmount;

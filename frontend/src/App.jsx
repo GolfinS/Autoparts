@@ -1,16 +1,17 @@
-import React, { useState } from 'react'
-import Home from './pages/Home/Home'
-import Footer from './components/Footer/Footer'
-import Navbar from './components/Navbar/Navbar'
-import { Route, Routes } from 'react-router-dom'
-import Cart from './pages/Cart/Cart'
-import LoginPopup from './components/LoginPopup/LoginPopup'
-import PlaceOrder from './Pages/PlaceOrder/PlaceOrder'
-import MyOrders from './pages/MyOrders/MyOrders'
-import Mechanical from './components/Mechanical/Mechanical'
-import Electrical from './components/Electrical/Electrical'
+import React, { useState } from 'react';
 import { ToastContainer } from 'react-toastify';
-import Verify from './pages/Verify/Verify'
+import { Route, Routes } from 'react-router-dom';
+import Home from './Pages/Home/Home';
+import Cart from './Pages/Cart/Cart';
+import Verify from './Pages/Verify/Verify';
+import Footer from './Components/Footer/Footer';
+import Navbar from './Components/Navbar/Navbar';
+import MyOrders from './Pages/MyOrders/MyOrders';
+import PlaceOrder from './Pages/PlaceOrder/PlaceOrder';
+import LoginPopup from './Components/LoginPopup/LoginPopup';
+import Mechanical from './Components/Mechanical/Mechanical';
+import Electrical from './Components/Electrical/Electrical';
+
 import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {

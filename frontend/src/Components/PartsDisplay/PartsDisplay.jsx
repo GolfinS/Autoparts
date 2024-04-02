@@ -1,7 +1,8 @@
-import React, { useContext } from 'react'
-import './PartsDisplay.css'
-import PartsItem from '../PartsItem/PartsItem'
-import { StoreContext } from '../../Context/StoreContext'
+import React, { useContext } from 'react';
+import PartsItem from '../PartsItem/PartsItem';
+import { StoreContext } from '../../Context/StoreContext';
+
+import './PartsDisplay.css';
 
 const PartsDisplay = ({category}) => {
 

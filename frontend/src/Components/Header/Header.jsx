@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 import hero_image from "../../assets/hero_image.png";
 
-import './Header.css'
+import './Header.css';
 
-const Header = () => {
+const Header = ({ name }) => {
     return (
         <div className="hero">
           <div className="hero-left">
@@ -11,7 +11,7 @@ const Header = () => {
             <h3>WELCOME BACK</h3>
             <div>
               <div className="hero-hand-icon">
-                <p>Adorarin</p>
+                <p>{name}</p>
                 
               </div>
               <p>{}</p>

@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
-import Header from '../../components/Header/Header'
-import PartsDisplay from '../../components/PartsDisplay/PartsDisplay'
+import React, { useState } from 'react';
+import Header from '../../Components/Header/Header';
+import PartsDisplay from '../../Components/PartsDisplay/PartsDisplay';
 
 const Home = () => {
 

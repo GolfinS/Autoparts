@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import Hero from '../Components/Hero/Hero'
-import Popular from '../Components/Popular/Popular'
-import NewCollections from '../Components/NewCollections/NewCollections'
+import React, { useEffect, useState } from 'react';
+import Header from '../Components/Header/Header';
+import Popular from '../Components/Popular/Popular';
+import NewCollections from '../Components/NewCollections/NewCollections';
 
 const Shop = () => {
 
@@ -24,7 +24,7 @@ const Shop = () => {
 
   return (
     <div>
-      <Hero/>
+      <Header/>
       <Popular data={popular}/>
       <NewCollections data={newcollection}/>
     </div>

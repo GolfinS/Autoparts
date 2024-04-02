@@ -1,8 +1,9 @@
 import React, { useContext, useState, useEffect } from 'react';
-import './PartsItem.css';
-import { assets } from '../../assets/assets';
 import { StoreContext } from '../../Context/StoreContext';
+import { assets } from '../../assets/assets';
 import { toast } from 'react-toastify';
+
+import './PartsItem.css';
 
 const PartsItem = ({ image, name, price, amount, desc, id }) => {
     const [itemCount, setItemCount] = useState(0);
