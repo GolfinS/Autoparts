@@ -1,7 +1,7 @@
 import { ToastContainer } from 'react-toastify';
 import { Route, Routes } from 'react-router-dom';
-import Sidebar from './components/Sidebar/Sidebar';
-import Navbar from './components/Navbar/Navbar';
+import Sidebar from './Components/Sidebar/Sidebar';
+import Navbar from './Components/Navbar/Navbar';
 import Orders from './pages/Orders/Orders';
 import List from './pages/List/List';
 import Add from './pages/Add/Add';
