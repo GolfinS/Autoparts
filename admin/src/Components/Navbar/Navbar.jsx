@@ -1,13 +1,13 @@
-import React from 'react'
-import './Navbar.css'
-import navlogo from '../Assets/nav-logo.svg'
-import navprofileIcon from '../Assets/nav-profile.svg'
+import { assets } from '../../assets/assets';
+import React from 'react';
+
+import './Navbar.css';
+
 const Navbar = () => {
   return (
-
     <div className='navbar'>
-      <img src={navlogo} className='nav-logo' alt="" />
-      <img src={navprofileIcon} className='nav-profile' alt="" />
+      <img className='logo' src={assets.logo} alt="" />
+      <img className='profile' src={assets.profile_image} alt="" />
     </div>
   )
 }

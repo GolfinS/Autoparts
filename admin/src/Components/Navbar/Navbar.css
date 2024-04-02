@@ -1,34 +1,13 @@
 .navbar{
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px 60px;
-    box-shadow: 0 1px 3px -2px black;
-    margin-bottom: 1px;
-    background: white;
-}
-.nav-logo{
-    width: 50px;
-}
-.nav-profile{
-    width: 50px;
-}
-.nav{
-    display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 1px 3px -2px black;
-    padding: 15px 70px;
+    padding: 8px 4%;
 }
-
-@media(max-width:800px){
-    .navbar{
-        padding: 15px 30px;
-    } 
-    .nav-logo{
-        width: 150px;
-    }
-    .nav-profile{
-        width: 60px;
-    }
+.navbar .logo{
+    width: max(10%,60px);
+    margin-left: 70px;
+}
+.navbar .profile{
+    width: 40px;
 }

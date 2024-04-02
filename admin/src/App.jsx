@@ -1,18 +1,30 @@
-import { BrowserRouter } from "react-router-dom";
-import Footer from "./Components/Footer/Footer";
-import Navbar from "./Components/Navbar/Navbar";
-import Admin from "./Pages/Admin";
+import { ToastContainer } from 'react-toastify';
+import { Route, Routes } from 'react-router-dom';
+import Sidebar from './components/Sidebar/Sidebar';
+import Navbar from './components/Navbar/Navbar';
+import Orders from './pages/Orders/Orders';
+import List from './pages/List/List';
+import Add from './pages/Add/Add';
+import React from 'react';
 
-function App() {
+import 'react-toastify/dist/ReactToastify.css';
+
+const App = () => {
   return (
-    <BrowserRouter>
-      <div>
-        <Navbar />
-        <Admin />
-        <Footer />
+    <div className='app'>
+      <ToastContainer/>
+      <Navbar/>
+      <hr />
+      <div className="app-content">
+        <Sidebar/>
+        <Routes>
+          <Route path="/add" element={<Add/>}/>
+          <Route path="/list" element={<List/>}/>
+          <Route path="/orders" element={<Orders/>}/>
+        </Routes>
       </div>
-    </BrowserRouter>
-  );
+    </div>
+  )
 }
 
-export default App;
+export default App
