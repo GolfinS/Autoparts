@@ -22,6 +22,7 @@ const addParts = async (req, res) => {
         name: req.body.name,
         description: req.body.description,
         price: req.body.price,
+        amount: req.body.amount,
         category:req.body.category,
         image: image_filename,
     })
