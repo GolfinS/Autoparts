@@ -8,7 +8,6 @@ import logo from '../Components/Assets/nav-logo.svg';
 import "./CSS/LoginSignup.css";
 import "./CSS/LoginSignups.css";
 
-
 const LoginSignup = () => {
   const [state, setState] = useState("Login");
   const [formData, setFormData] = useState({ username: "", email: "", password: "" });

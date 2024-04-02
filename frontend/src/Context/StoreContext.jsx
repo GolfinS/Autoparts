@@ -1,5 +1,4 @@
 import { createContext, useEffect, useState } from "react";
-import { menu_list } from "../assets/assets";
 import axios from "axios";
 
 export const StoreContext = createContext(null);
@@ -8,6 +7,7 @@ const StoreContextProvider = (props) => {
 
     const url = "http://localhost:4000"
     const [parts_list, setPartsList] = useState([]);
+    const [product_list, setProductList] = useState([]);
     const [cartItems, setCartItems] = useState({});
     const [token, setToken] = useState("")
     const [discountApplied, setDiscountApplied] = useState(false);
@@ -67,7 +67,7 @@ const StoreContextProvider = (props) => {
     const contextValue = {
         url,
         parts_list,
-        menu_list,
+        product_list,
         cartItems,
         addToCart,
         removeFromCart,
