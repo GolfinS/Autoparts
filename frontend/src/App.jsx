@@ -1,34 +1,41 @@
-import Navbar from "./Components/Navbar/Navbar";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Shop from "./Pages/Shop";
-import Cart from "./Pages/Cart";
-import Product from "./Pages/Product";
-import Footer from "./Components/Footer/Footer";
-import ShopCategory from "./Pages/ShopCategory";
-import banner1 from "./Components/Assets/banner1.png";
-import banner2 from "./Components/Assets/banner2.png";
-import LoginSignup from "./Pages/LoginSignup";
+import React, { useState } from 'react'
+import Home from './pages/Home/Home'
+import Footer from './components/Footer/Footer'
+import Navbar from './components/Navbar/Navbar'
+import { Route, Routes } from 'react-router-dom'
+import Cart from './pages/Cart/Cart'
+import LoginPopup from './components/LoginPopup/LoginPopup'
+import PlaceOrder from './pages/PlaceOrder/PlaceOrder'
+import MyOrders from './pages/MyOrders/MyOrders'
+import Mechanical from './components/Mechanical/Mechanical'
+import Electrical from './components/Electrical/Electrical'
+import { ToastContainer } from 'react-toastify';
+import Verify from './pages/Verify/Verify'
+import 'react-toastify/dist/ReactToastify.css';
 
-function App() {
+const App = () => {
 
+  const [showLogin,setShowLogin] = useState(false);
+  
   return (
-    <div>
-      <Router>
-        <Navbar />
+    <>
+    <ToastContainer/>
+    {showLogin?<LoginPopup setShowLogin={setShowLogin}/>:<></>}
+      <div className='app'>
+        <Navbar setShowLogin={setShowLogin}/>
         <Routes>
-          <Route path="/" element={<Shop gender="all" />} />
-          <Route path="/mechanical" element={<ShopCategory banner={banner1} category="mechanical" />} />
-          <Route path="/electrical" element={<ShopCategory banner={banner2} category="electrical" />} />
-          <Route path='/product' element={<Product />}>
-            <Route path=':productId' element={<Product />} />
-          </Route>
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/login" element={<LoginSignup/>} />
+          <Route path='/' element={<Home />}/>
+          <Route path='/cart' element={<Cart />}/>
+          <Route path='/order' element={<PlaceOrder />}/>
+          <Route path='/myorders' element={<MyOrders />}/>
+          <Route path='/mechanical' element={<Mechanical category= 'Mechanical'/>}/>
+          <Route path='/electrical' element={<Electrical category= 'Electrical'/>}/>
+          <Route path='/verify' element={<Verify />}/>
         </Routes>
-        <Footer />
-      </Router>
-    </div>
-  );
+      </div>
+      <Footer />
+    </>
+  )
 }
 
-export default App;
+export default App

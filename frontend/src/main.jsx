@@ -1,12 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './main.css';
-import App from './App';
-import ShopContextProvider from './Context/ShopContext';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App.jsx'
+import './index.css'
+import { BrowserRouter } from 'react-router-dom'
+import StoreContextProvider from './Context/StoreContext'
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-    <ShopContextProvider>
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <BrowserRouter>
+    <StoreContextProvider>
       <App />
-    </ShopContextProvider>
-);
+    </StoreContextProvider>
+  </BrowserRouter>,
+)

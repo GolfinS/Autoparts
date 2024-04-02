@@ -61,6 +61,18 @@
     height: 2px;
     background: #c7c7c7;
 }
+
+@media (max-width:750px) {
+    .footer-content{
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+    }
+    .footer-copyright{
+        text-align: center;
+    }
+}
+
 @media(max-width:800px){
     .footer-links{
         gap: 20px;
