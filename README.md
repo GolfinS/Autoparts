@@ -21,3 +21,5 @@ Go /admin CMD npm i
 and run CMD npm run dev
 
 If use DOCKER for Developer ...
+
+Credit TEACHER and Template (css, scss) project by https://www.youtube.com/@LamaDev/videos, https://www.youtube.com/@GreatStackDev/videos, https://www.youtube.com/@IsraTech1/videos
