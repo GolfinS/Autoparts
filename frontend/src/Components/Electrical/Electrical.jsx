@@ -11,7 +11,7 @@ const Electrical = ({category}) => {
 
   return (
     <div className='parts-display' id='parts-display'>
-      <h2>Last Product Add</h2>
+      <h2>Electrical Product</h2>
       <div className='parts-display-list'>
         {parts_list.map((item)=>{
           if (category==="All" || category===item.category) {
