@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { assets } from '../../assets/assets';
 import { Link, useNavigate } from 'react-router-dom';
 import { StoreContext } from '../../Context/StoreContext';
+import { toast } from 'react-toastify';
 
 import './Navbar.css';
 
@@ -14,7 +15,8 @@ const Navbar = ({ setShowLogin }) => {
   const logout = () => {
     localStorage.removeItem("token");
     setToken("");
-    navigate('/')
+    navigate('/');
+    toast.success("Logout complete");
   }
 
   return (
@@ -26,7 +28,6 @@ const Navbar = ({ setShowLogin }) => {
         <Link to="/electrical" onClick={() => setMenu("Electrical")} className={`${menu === "Electrical" ? "active" : ""}`}>Electrical</Link>
       </ul>
       <div className="navbar-right">
-        <img src={assets.search_icon} alt="" />
         <Link to='/cart' className='navbar-search-icon'>
           <img src={assets.basket_icon} alt="" />
           <div className={getTotalCartAmount() > 0 ? "dot" : ""}></div>

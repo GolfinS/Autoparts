@@ -21,17 +21,23 @@ const List = () => {
   }
 
   const removePart = async (partId) => {
-    const response = await axios.post(`${url}/api/parts/remove`,{
-      id:partId
-    })
-    await fetchList();
-    if (response.data.success) {
-      toast.success(response.data.message);
+    try {
+      const confirmDelete = window.confirm("Are you sure you want to delete this part?");
+      if (!confirmDelete) return;
+
+      const response = await axios.post(`${url}/api/parts/remove`, { id: partId });
+      await fetchList();
+
+      if (response.data.success) {
+        toast.success(response.data.message);
+      } else {
+        toast.error("Error");
+      }
+    } catch (error) {
+      console.error("Error removing part:", error);
+      toast.error("Failed to remove part");
     }
-    else {
-      toast.error("Error")
-    }
-  }
+  };
 
   useEffect(()=>{
     fetchList();
@@ -57,6 +63,7 @@ const List = () => {
                 <p>{item.category}</p>
                 <p>${item.price}</p>
                 <p>{item.amount}</p>
+                
                 <p className='cursor' onClick={()=>removePart(item._id)}>x</p>
               </div>
             )

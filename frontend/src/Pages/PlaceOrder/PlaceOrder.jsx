@@ -50,7 +50,7 @@ const PlaceOrder = () => {
         let orderData = {
             address: data,
             items: orderItems,
-            amount: getTotalCartAmount() + 5,
+            amount: getTotalCartAmount() + 0.75,
         }
         let response = await axios.post(url + "/api/order/place", orderData, { headers: { token } });
         if (response.data.success) {
@@ -63,7 +63,7 @@ const PlaceOrder = () => {
     }
 
     const discountedTotal = () => {
-        const totalAmount = getTotalCartAmount() + 5;
+        const totalAmount = getTotalCartAmount() + 0.75;
         if (discountApplied) {
           return totalAmount * 0.01;
         } else {
@@ -171,7 +171,7 @@ const PlaceOrder = () => {
                         <div className="cart-total-details"><b>Total</b><b>${discountedTotal()}</b></div>
                     </div>
                 </div>
-                <button onClick={() => setTimeout(() => navigate('/myorders'), 1000)} className='place-order-submit slow-transition' type='submit'>Pay on Delivery</button>
+                <button onClick={() => setTimeout(() => navigate('/myorders'), 2000)} className='place-order-submit slow-transition' type='submit'>Pay on Delivery</button>
                 <div style={{ maxWidth: "250px", minHeight: "250px" }}>
                     <PayPalScriptProvider options={{ clientId: "ATYYrTnup7h8DzjhrfJRTOey7k4Ei96VusfuRKxSDmCHxD2EUUTVRWOLnuXgFcVF9oyG3tyMtgXPAyV5", components: "buttons", currency: "USD" }}>
                         <ButtonWrapper showSpinner={false} />

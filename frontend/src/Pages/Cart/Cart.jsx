@@ -33,7 +33,7 @@ const Cart = () => {
   };
 
   const discountedTotal = () => {
-    const totalAmount = getTotalCartAmount() + 5;
+    const totalAmount = getTotalCartAmount() + 0.75;
     if (discountApplied) {
       toast.success("Promo code applied successfully! You get a 99% discount.");
       return totalAmount * 0.01;
@@ -75,7 +75,7 @@ const Cart = () => {
           <div>
             <div className="cart-total-details"><p>Subtotal</p><p>${getTotalCartAmount()}</p></div>
             <hr />
-            <div className="cart-total-details"><p>Delivery Fee</p><p>${getTotalCartAmount() === 0 ? 0 : 5}</p></div>
+            <div className="cart-total-details"><p>Delivery Fee</p><p>${getTotalCartAmount() === 0 ? 0 : 1.75}</p></div>
             <hr />
             <div className="cart-total-details"><b>Total</b><b>${discountedTotal()}</b></div>
           </div>
